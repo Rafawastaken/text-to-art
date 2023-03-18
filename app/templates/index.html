@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block content %}
+<!-- Hero -->
+<div class="row mt-3">
+  <div class="col">
+    <div class="display-5">Text to Image</div>
+    <hr class="bg-secondary" />
+  </div>
+</div>
+
+<!-- form  -->
+<div class="row mt-3">
+  <div class="col">
+    <form method="POST">
+      <div class="h5">Enter Image Description</div>
+      <div class="row">
+        <div class="col-10 mb-3">
+          <input class="form-control" type="text" name="description" />
+        </div>
+        <div class="col-2 mb-3">
+          <input
+            type="submit"
+            value="Generate"
+            class="btn btn-primary form-control"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% if result %}
+<div class="row mt-3">
+  <div class="col">
+    <div class="display-6">Result for: {{description}}</div>
+    <hr class="bg-secondary" />
+  </div>
+</div>
+<div class="row mb-3">
+  <img
+    src="{{result}}"
+    alt="image-result"
+    class="rounded"
+    height="512"
+    width="512"
+  />
+</div>
+
+{% endif%} {% endblock %}
